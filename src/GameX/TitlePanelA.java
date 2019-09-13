@@ -35,6 +35,6 @@ public class TitlePanelA extends AGamePanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.clearRect(0, 0, getWidth(), getHeight());
-        g.drawImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\Game\\街.PNG"),  10,10,400,400,this);
+        g.drawImage(Toolkit.getDefaultToolkit().getImage("src\\Game\\街.PNG"),  10,10,400,400,this);
     }
 }

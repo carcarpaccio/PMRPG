@@ -2,42 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ed77ae4-f17a-4e8d-a447-6bf1e7ef2596" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/Game/B.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/Game/Campus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/Game/Field.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/Game/Field1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/Game/GameFrame.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/Game/GamePanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/Game/GamePanel2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/Game/GameTask.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/Game/Hero.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/Game/Human.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/Game/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/Game/MoveController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/Game/街.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameLoop/Paint.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameLoop/Test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/A.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/AGamePanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/EGameScene.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/Field.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/FieldPanelA.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/GameManager$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/GameManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/Hero.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/IChangeScene.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/ITask.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/Keyboard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/TitlePanelA.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ProjectMember/META-INF/ProjectMember.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameX/AGamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameX/AGamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameX/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameX/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameX/FieldPanelA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameX/FieldPanelA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameX/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameX/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameX/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameX/Keyboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameX/TitlePanelA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameX/TitlePanelA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,19 +33,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameX/AGamePanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-              <folding>
-                <element signature="e#186#187#0" expanded="true" />
-                <element signature="e#226#227#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -140,14 +92,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameX/FieldPanelA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            <state relative-caret-position="102">
+              <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -224,6 +185,7 @@
         <option value="$PROJECT_DIR$/src/GameX/Field.java" />
         <option value="$PROJECT_DIR$/src/GameX/TitlePanelA.java" />
         <option value="$PROJECT_DIR$/src/GameX/FieldPanelA.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -233,16 +195,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="661" />
-    <option name="y" value="352" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
@@ -260,17 +215,6 @@
             <path>
               <item name="ProjectMember" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectMember" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectMember" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectMember" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectMember" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectMember" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GameX" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -396,7 +340,7 @@
       <workItem from="1568261336788" duration="9833000" />
       <workItem from="1568271840992" duration="1804000" />
       <workItem from="1568301553784" duration="1184000" />
-      <workItem from="1568349092715" duration="4571000" />
+      <workItem from="1568349092715" duration="5242000" />
     </task>
     <task id="LOCAL-00001" summary="hiunn">
       <created>1568273453722</created>
@@ -409,12 +353,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118696000" />
+    <option name="totallyTimeSpent" value="119367000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="529" y="282" width="784" height="832" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24585636" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.119463086" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -431,7 +375,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32857144" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32577905" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50939596" side_tool="true" weight="0.3045326" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49463087" weight="0.33427763" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -686,11 +630,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameX/FieldPanelA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        <state relative-caret-position="102">
+          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
