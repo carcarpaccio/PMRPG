@@ -1,7 +1,6 @@
 package GameX;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.sql.SQLOutput;
 
 
 public class TitlePanelA extends AGamePanel {
@@ -20,17 +19,15 @@ public class TitlePanelA extends AGamePanel {
     @Override
     public void update() {
         if(GameManager.keyboard.getPressedFrame(KeyEvent.VK_ENTER) > 0) {
-
             scene.changeScene(EGameScene.eField);
         }
-
-
 
     }
 
     @Override
     public void destroy() {
        setVisible(false);
+       remove(this);
     }
 
 

@@ -3,7 +3,6 @@ package GameX;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-import static java.awt.event.KeyEvent.VK_UP;
 
 
 public class Keyboard extends KeyAdapter {

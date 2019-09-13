@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class FieldPanelA extends AGamePanel {
+    boolean push=true;
     Hero hero;
     public FieldPanelA(IChangeScene changeScene){
 
@@ -20,16 +21,30 @@ public class FieldPanelA extends AGamePanel {
 
     @Override
     public void update() {
-        if(GameManager.keyboard.getPressedFrame(KeyEvent.VK_UP) > 0) {hero.setY(hero.getY()+1);}
-        else if(GameManager.keyboard.getPressedFrame(KeyEvent.VK_DOWN) > 0){hero.setY(hero.getY()-1);}
-        else if(GameManager.keyboard.getPressedFrame(KeyEvent.VK_RIGHT) > 0){hero.setX(hero.getX()+1);}
-        else if(GameManager.keyboard.getPressedFrame(KeyEvent.VK_LEFT) > 0){hero.setX(hero.getX()-1);}
+        if (push) {
+            push = false;
+            if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_UP) > 0) {
+                hero.setY(hero.getY() - 1);
+            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_DOWN) > 0) {
+                for (int i = 0; i < 9; i++) {
+                    if (i == 0) System.out.println("0ho");
+                    if (i == 2) System.out.println("1po");
+                    else if (i == 5) System.out.println("2ho");
+                    hero.setY(hero.getY() + Field.squea_length / 40);
+                }
+            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_RIGHT) > 0) {
+                hero.setX(hero.getX() + 1);
+            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_LEFT) > 0) {
+                hero.setX(hero.getX() - 1);
+            }
+            push = true;
+        }
     }
 
     @Override
     public void destroy() {
         setVisible(false);
-
+        remove(this);
     }
 
     @Override

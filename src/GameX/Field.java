@@ -1,6 +1,8 @@
 package GameX;
 
 public class Field {
+    //
+    static int squea_length=50;
     int info[][];
     Field() {
         for (int j = 0; j < 10; j++) { //1＝道、0＝壁

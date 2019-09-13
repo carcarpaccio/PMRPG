@@ -23,6 +23,7 @@ public class GameManager extends Thread implements IChangeScene {
     }
 
     public void run() {
+
         while (true) {
             if(nextGameScene != EGameScene.eNone) {
                 panel.destroy();    //前ぺージ削除
