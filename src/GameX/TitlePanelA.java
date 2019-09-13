@@ -31,6 +31,7 @@ public class TitlePanelA extends AGamePanel {
     @Override
     public void destroy() {
        setVisible(false);
+       remove(this);
     }
 
 
