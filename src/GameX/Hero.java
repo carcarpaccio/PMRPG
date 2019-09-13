@@ -1,20 +1,12 @@
 package GameX;
-import java.awt.*;
 
-public class Hero extends ADrawableComponent{
-
-
-    Hero(){
+public class Hero extends ADrawableComponent {
+    public Hero() {
 
     }
 
     public boolean initialize() {
-
         loadImage("src\\GameX\\A.jpg");
         return true;
-
     }
-
-
-
 }

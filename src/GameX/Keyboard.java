@@ -14,6 +14,7 @@ public class Keyboard extends KeyAdapter {
 
         @Override
         public void keyPressed(KeyEvent e) {
+            super.keyPressed(e);
             key[e.getKeyCode()]++;
         }
 

@@ -1,47 +1,70 @@
 package GameX;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
+
+import static java.awt.event.KeyEvent.*;
 
 public class FieldPanelA extends AGamePanel {
-
-    Hero hero;
-    Hero man;
+    private Counter counter;
+    private MapChip mapChip;
+    private EDirection direction;
+    private int waitTime;
 
     public FieldPanelA(IChangeScene changeScene) {
-
         super(changeScene);
         setVisible(true);
         System.out.println("Field画面");
-        hero = new Hero();
-        man = new Hero();
-        man.setX(man.getX() + 100);
+
+        mapChip = new MapChip();
+        counter = new Counter();
+        direction = EDirection.eNone;
+        waitTime = 0;
     }
 
     @Override
     public boolean initialize() {
-        if (!hero.initialize()) System.out.println("へろ読めねー");
+        mapChip.loadImage("src\\GameX\\A.jpg");
         return true;
     }
 
     @Override
     public void update() {
-        if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_UP) > 0) {
-            hero.setY(hero.getY() - 1);
+        if (GameManager.keyboard.getPressedFrame(VK_UP) > 0) {
+            direction = EDirection.eUp;
         }
-        if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_DOWN) > 0) {
-            hero.setY(hero.getY() + 1);
+        else if (GameManager.keyboard.getPressedFrame(VK_DOWN) > 0) {
+            direction = EDirection.eDown;
         }
-        if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_RIGHT) > 0) {
-            hero.setX(hero.getX() + 1);
+        else if (GameManager.keyboard.getPressedFrame(VK_RIGHT) > 0) {
+            direction = EDirection.eRight;
         }
-        if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_LEFT) > 0) {
-            hero.setX(hero.getX() - 1);
+        else if (GameManager.keyboard.getPressedFrame(VK_LEFT) > 0) {
+            direction = EDirection.eLeft;
+        }else{
+            direction = EDirection.eNone;
         }
 
-        if (hero.overlapTo(man)) {
-            System.out.println("できた");
+        if(direction != EDirection.eNone && waitTime == 0){
+            switch (direction){
+                case eRight:
+                    mapChip.setX(mapChip.getX()+64);
+                    break;
+                case eDown:
+                    mapChip.setY(mapChip.getY()+64);
+                    break;
+                case eLeft:
+                    mapChip.setX(mapChip.getX()-64);
+                    break;
+                case eUp:
+                    mapChip.setY(mapChip.getY()-64);
+                    break;
+            }
+            direction = EDirection.eNone;
+            waitTime = 10;
         }
+        if(waitTime > 0)waitTime--;
+
+        counter.update();
     }
 
     @Override
@@ -54,6 +77,7 @@ public class FieldPanelA extends AGamePanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.clearRect(0, 0, getWidth(), getHeight());
-        g.drawImage(hero.getImage(), hero.getX(), hero.getY(), 40, 40, this);
+        g.drawImage(Toolkit.getDefaultToolkit().getImage("src/Game/街.PNG"), 0, 0, 64 * 10, 64 * 10, this);
+        g.drawImage(mapChip.getImage(), mapChip.getX(), mapChip.getY(), 64, 64, this);
     }
 }

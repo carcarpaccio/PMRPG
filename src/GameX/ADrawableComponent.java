@@ -34,8 +34,9 @@ public abstract class ADrawableComponent {
         return image;
     }
 
-    public void loadImage(String path) {
+    public boolean loadImage(String path) {
         image = Toolkit.getDefaultToolkit().getImage(path);
+        return image != null;
     }
 
 
