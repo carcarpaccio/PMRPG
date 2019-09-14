@@ -8,7 +8,7 @@ public class FieldPanelA extends AGamePanel {
     DirectionDrawableComponent hero=new DirectionDrawableComponent();
 
     Counter count;
-    boolean availablekey;
+    Counter keycount;
 
     public FieldPanelA(IChangeScene changeScene){
         super(changeScene);
@@ -16,6 +16,7 @@ public class FieldPanelA extends AGamePanel {
         System.out.println("Field画面");
         length=40;
         count=new Counter();
+        keycount=new Counter();
     }
 
     @Override
@@ -27,23 +28,24 @@ public class FieldPanelA extends AGamePanel {
     @Override
     public void update() {
         count.update();
-
-            if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_UP) > 0) {
-                hero.setY(hero.getY() - length/4);
+        if(GameManager.keyboard.isAvailabkekey()){
+            count.update();
+            GameManager.keyboard.setAvailabkekey(false);
+        }
+            if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_UP) > 0&&) {
+                hero.setY(hero.getY() - length / 4);
                 hero.setDirection(EDirection.eUp);
             } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_DOWN) > 0) {
-                hero.setY(hero.getY() + length/4);
+                hero.setY(hero.getY() + length / 4);
                 hero.setDirection(EDirection.eDown);
             } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_RIGHT) > 0) {
-                hero.setX(hero.getX() + length/4);
+                hero.setX(hero.getX() + length / 4);
                 hero.setDirection(EDirection.eRight);
             } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_LEFT) > 0) {
-                hero.setX(hero.getX() - length/4);
+                hero.setX(hero.getX() - length / 4);
                 hero.setDirection(EDirection.eLeft);
-
             }
         }
-
 
     @Override
     public void destroy() {
@@ -60,10 +62,11 @@ public class FieldPanelA extends AGamePanel {
 
 
 
-        if(count.getCount()>0   )hero.setCurrentImageIndex(0);
-        if(count.getCount()>10  )hero.setCurrentImageIndex(1);
-        if(count.getCount()>20  )hero.setCurrentImageIndex(2);
-        if(count.getCount()>30  )hero.setCurrentImageIndex(3);
+        if(count.getCount()>=0   )hero.setCurrentImageIndex(0);
+        if(count.getCount()>=10  )hero.setCurrentImageIndex(1);
+        if(count.getCount()>=20  )hero.setCurrentImageIndex(2);
+        if(count.getCount()>=30  )hero.setCurrentImageIndex(3);
+
         switch (hero.getDirection()){
             case eRight:
                 g.drawImage(hero.getImage(),hero.getX(),hero.getY(),hero.getImage().getWidth(this),hero.getImage().getWidth(this),this);
@@ -80,6 +83,6 @@ public class FieldPanelA extends AGamePanel {
             case eNone:
                 break;
         }
-        if(count.getCount()>40)    count.reset();
+        if(count.getCount()>=40)    count.reset();
     }
 }
