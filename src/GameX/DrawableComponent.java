@@ -2,18 +2,17 @@ package GameX;
 
 import java.awt.*;
 
-public abstract class ADrawableComponent {
+public class DrawableComponent {
 
     private int x;
     private int y;
-    private EDirection direction;
+
 
     protected Image image;
 
-    public ADrawableComponent() {
+    public DrawableComponent() {
         x = 0;
         y = 0;
-        direction=EDirection.eDown;
         image = null;
     }
 
@@ -23,7 +22,7 @@ public abstract class ADrawableComponent {
      * @param drawableComponent 判定する対象
      * @return 重なっているかどうか
      */
-    public boolean overlapTo(ADrawableComponent drawableComponent) {
+    public boolean overlapTo(DrawableComponent drawableComponent) {
 
         if (this.x == drawableComponent.x && this.y == drawableComponent.y){
             return true;
@@ -58,11 +57,4 @@ public abstract class ADrawableComponent {
         this.y = y;
     }
 
-    public EDirection getDirection() {
-        return direction;
-    }
-
-    public void setDirection(EDirection direction) {
-        this.direction = direction;
-    }
 }
