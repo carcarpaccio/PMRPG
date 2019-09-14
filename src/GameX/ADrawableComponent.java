@@ -6,11 +6,14 @@ public abstract class ADrawableComponent {
 
     private int x;
     private int y;
+    private EDirection direction;
+
     protected Image image;
 
     public ADrawableComponent() {
         x = 0;
         y = 0;
+        direction=EDirection.eDown;
         image = null;
     }
 
@@ -53,5 +56,13 @@ public abstract class ADrawableComponent {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public EDirection getDirection() {
+        return direction;
+    }
+
+    public void setDirection(EDirection direction) {
+        this.direction = direction;
     }
 }

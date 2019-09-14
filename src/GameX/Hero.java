@@ -10,7 +10,7 @@ public class Hero extends ADrawableComponent{
 
     public boolean initialize() {
 
-        loadImage("src\\GameX\\A.jpg");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\pipo-charachip001.png");
         return true;
 
     }
