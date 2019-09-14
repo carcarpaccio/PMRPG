@@ -1,19 +1,21 @@
 package GameX;
 
 import java.awt.*;
+import java.util.ArrayList;
 
-public class DrawableComponent {
+abstract public class DrawableComponent {
 
     private int x;
     private int y;
 
-
-    protected Image image;
+    protected ArrayList<Image> images;
+    protected int currentImageIndex;
 
     public DrawableComponent() {
         x = 0;
         y = 0;
-        image = null;
+        images=new ArrayList<>();
+        currentImageIndex=0;
     }
 
     /**
@@ -33,12 +35,17 @@ public class DrawableComponent {
 
 
     public Image getImage() {
-        return image;
+        return images.get(currentImageIndex);
     }
 
     public void loadImage(String path) {
-        image = Toolkit.getDefaultToolkit().getImage(path);
+        Image image=Toolkit.getDefaultToolkit().getImage(path);
+        if(image==null) return;
+        images.add(image);
     }
+    abstract void setCurrentImageIndex(int index);
+
+
 
 
     public int getX() {

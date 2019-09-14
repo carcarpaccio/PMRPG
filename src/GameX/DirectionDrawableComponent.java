@@ -1,5 +1,6 @@
 package GameX;
 
+
 public class DirectionDrawableComponent extends DrawableComponent {
     private EDirection direction;
 
@@ -9,7 +10,10 @@ public class DirectionDrawableComponent extends DrawableComponent {
 
     public boolean initialize() {
 
-        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\pipo-charachip001.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\char0.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\char1.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\char2.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\char3.png");
         return true;
 
     }
@@ -21,5 +25,10 @@ public class DirectionDrawableComponent extends DrawableComponent {
 
     public void setDirection(EDirection direction) {
         this.direction = direction;
+    }
+
+    @Override
+    void setCurrentImageIndex(int index) {
+        currentImageIndex=index%4;
     }
 }

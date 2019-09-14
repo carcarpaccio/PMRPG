@@ -7,11 +7,15 @@ public class FieldPanelA extends AGamePanel {
     int length;
     DirectionDrawableComponent hero=new DirectionDrawableComponent();
 
+    Counter count;
+    boolean availablekey;
+
     public FieldPanelA(IChangeScene changeScene){
         super(changeScene);
         setVisible(true);
         System.out.println("Field画面");
         length=40;
+        count=new Counter();
     }
 
     @Override
@@ -22,23 +26,24 @@ public class FieldPanelA extends AGamePanel {
 
     @Override
     public void update() {
-                if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_UP) > 0) {
-                    hero.setY(hero.getY() - length);
-                    hero.setDirection(EDirection.eUp);
-                } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_DOWN) > 0) {
-                    hero.setY(hero.getY() + length);
-                    hero.setDirection(EDirection.eDown);
-                } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_RIGHT) > 0) {
-                    hero.setX(hero.getX() + length);
-                    hero.setDirection(EDirection.eRight);
-                } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_LEFT) > 0) {
-                    hero.setX(hero.getX() - length);
-                    hero.setDirection(EDirection.eLeft);
+        count.update();
 
-                }
+            if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_UP) > 0) {
+                hero.setY(hero.getY() - length/4);
+                hero.setDirection(EDirection.eUp);
+            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_DOWN) > 0) {
+                hero.setY(hero.getY() + length/4);
+                hero.setDirection(EDirection.eDown);
+            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_RIGHT) > 0) {
+                hero.setX(hero.getX() + length/4);
+                hero.setDirection(EDirection.eRight);
+            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_LEFT) > 0) {
+                hero.setX(hero.getX() - length/4);
+                hero.setDirection(EDirection.eLeft);
 
+            }
+        }
 
-    }
 
     @Override
     public void destroy() {
@@ -52,22 +57,29 @@ public class FieldPanelA extends AGamePanel {
         g.clearRect(0, 0, getWidth(), getHeight());
         //g.drawImage(hero.getImage(),(int)hero.getX(),(int) hero.getY(),40,40,this);
         g.drawImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\Game\\街.PNG"),  0,0,400,400,this);
-        switch (hero.getDirection()){
 
+
+
+        if(count.getCount()>0   )hero.setCurrentImageIndex(0);
+        if(count.getCount()>10  )hero.setCurrentImageIndex(1);
+        if(count.getCount()>20  )hero.setCurrentImageIndex(2);
+        if(count.getCount()>30  )hero.setCurrentImageIndex(3);
+        switch (hero.getDirection()){
             case eRight:
-                g.drawImage(hero.getImage(),hero.getX(),hero.getY(),length+hero.getX(),length+hero.getY(),32,64,64,96,this);
+                g.drawImage(hero.getImage(),hero.getX(),hero.getY(),hero.getImage().getWidth(this),hero.getImage().getWidth(this),this);
                 break;
             case eLeft:
-                g.drawImage(hero.getImage(),hero.getX(),hero.getY(),length+hero.getX(),length+hero.getY(),32,32,64,64,this);
+                g.drawImage(hero.getImage(),hero.getX(),hero.getY(),hero.getImage().getWidth(this),hero.getImage().getWidth(this),this);
                 break;
             case eUp:
-                g.drawImage(hero.getImage(),hero.getX(),hero.getY(),length+hero.getX(),length+hero.getY(),32,96,64,128,this);
+                g.drawImage(hero.getImage(),hero.getX(),hero.getY(),hero.getImage().getWidth(this),hero.getImage().getWidth(this),this);
                 break;
             case eDown:
-                g.drawImage(hero.getImage(),hero.getX(),hero.getY(),length+hero.getX(),length+hero.getY(),32,0,64,32,this);
+                g.drawImage(hero.getImage(),hero.getX(),hero.getY(),hero.getImage().getWidth(this),hero.getImage().getWidth(this),this);
                 break;
             case eNone:
                 break;
         }
+        if(count.getCount()>40)    count.reset();
     }
 }

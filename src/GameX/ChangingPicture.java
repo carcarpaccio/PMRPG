@@ -5,9 +5,7 @@ import java.util.ArrayList;
 
 public class ChangingPicture {
     DrawableComponent drawableComponent;
-    ArrayList<Image> picture=new ArrayList();
-ChangingPicture(){
+    ArrayList<Image> images=new ArrayList();
 
-}
 
 }
