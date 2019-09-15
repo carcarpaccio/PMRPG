@@ -12,8 +12,8 @@ abstract public class DrawableComponent {
     protected int currentImageIndex;
 
     public DrawableComponent() {
-        x = 0;
-        y = 0;
+        x = 1;
+        y = 1;
         images=new ArrayList<>();
         currentImageIndex=0;
     }
