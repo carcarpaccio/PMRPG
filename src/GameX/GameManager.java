@@ -14,6 +14,7 @@ public class GameManager extends Thread implements IChangeScene {
         frame = new JFrame();
         frame.addKeyListener(keyboard);
         frame.setBounds(0, 0, 400, 400);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.setVisible(true);
 
