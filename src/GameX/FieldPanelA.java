@@ -20,7 +20,6 @@ public class FieldPanelA extends AGamePanel {
         System.out.println("Field画面");
         length=40;
         count=new Counter();    //足踏み処理の買うんと
-        keycount=new Counter(); //マス目移動の中間のためのカウント
 
         fieldA =new FieldA();
         fieldManager=new FieldManager(fieldA,hero);
@@ -35,31 +34,20 @@ public class FieldPanelA extends AGamePanel {
     @Override
     public void update() {
         count.update();
-            if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_UP) > 0 || keycount.getCount() < 4 && keycount.getCount() > 0 && hero.getDirection() == EDirection.eUp) {
+            if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_UP) > 0 ) {
                 hero.setDirection(EDirection.eUp);
-                hero.setY(hero.getY() - length / 4);
-                keycount.update();
-                GameManager.keyboard.setAvailabkekey(false);
-            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_DOWN) > 0 || keycount.getCount() < 4 && keycount.getCount() > 0 && hero.getDirection() == EDirection.eDown) {
+                hero.setY(hero.getY() - length );
+            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_DOWN) > 0 ) {
                 hero.setDirection(EDirection.eDown);
-                hero.setY(hero.getY() + length / 4);
-                keycount.update();
-                GameManager.keyboard.setAvailabkekey(false);
-            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_RIGHT) > 0 || keycount.getCount() < 4 && keycount.getCount() > 0 && hero.getDirection() == EDirection.eRight) {
+                hero.setY(hero.getY() + length );
+            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_RIGHT) > 0 ) {
                 hero.setDirection(EDirection.eRight);
-                hero.setX(hero.getX() + length / 4);
-                keycount.update();
-                GameManager.keyboard.setAvailabkekey(false);
-            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_LEFT) > 0 || keycount.getCount() < 4 && keycount.getCount() > 0 && hero.getDirection() == EDirection.eLeft) {
+                hero.setX(hero.getX() + length );
+            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_LEFT) > 0 ) {
                 hero.setDirection(EDirection.eLeft);
-                hero.setX(hero.getX() - length / 4);
-                keycount.update();
-                GameManager.keyboard.setAvailabkekey(false);
+                hero.setX(hero.getX() - length );
             }
-            if(keycount.getCount()==4){ //四回動いたらキーボード入力受付
-                keycount.reset();
-                GameManager.keyboard.setAvailabkekey(true);
-            }
+
         }
 
     @Override

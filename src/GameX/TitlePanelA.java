@@ -1,4 +1,5 @@
 package GameX;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
@@ -6,9 +7,9 @@ import java.awt.event.KeyEvent;
 public class TitlePanelA extends AGamePanel {
     public TitlePanelA(IChangeScene changeScene) {
         super(changeScene);
+        add(new JLabel("ENTER START"));
         super.setVisible(true);
         super.setFocusable(true);
-        System.out.println("Title画面");
     }
 
     @Override
@@ -35,6 +36,5 @@ public class TitlePanelA extends AGamePanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.clearRect(0, 0, getWidth(), getHeight());
-        g.drawImage(Toolkit.getDefaultToolkit().getImage("src\\Game\\街.PNG"),  10,10,400,400,this);
     }
 }
