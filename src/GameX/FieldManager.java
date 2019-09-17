@@ -10,26 +10,27 @@ public class FieldManager {
     }
 
 
-    public void checkEvent() {
-    }
-
-    public boolean beforeCheck(){ //移動ますが壁か？
-        switch (GameManager.keyboard.keycord){
-            case 39:
-                if(fieldA.info[directionDrawableComponent.getX()+1][directionDrawableComponent.getY()]==0)       return false;
+    public boolean beforecheck(EDirection eDirection) {//movesurumasunokazu
+        int i=0,j=0;
+        switch (eDirection) {
+            case eRight:
+                i++;
                 break;
-            case 37:
-                if(fieldA.info[directionDrawableComponent.getX()-1][directionDrawableComponent.getY()]==0)       return false;
+            case eLeft:
+                i--;
                 break;
-            case 38:
-                if(fieldA.info[directionDrawableComponent.getX()][directionDrawableComponent.getY()-1]==0)       return false;
+            case eUp:
+                j--;
                 break;
-            case 40:
-                if(fieldA.info[directionDrawableComponent.getX()][directionDrawableComponent.getY()+1]==0)       return false;
+            case eDown:
+                j++;
+                break;
+            case eNone:
                 break;
         }
-        return true;
+        return fieldA.getInfo(directionDrawableComponent.getX()/40+i,directionDrawableComponent.getY()/40+j)!=0;
     }
+
 
 
 }

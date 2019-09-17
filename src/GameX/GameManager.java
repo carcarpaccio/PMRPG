@@ -13,7 +13,7 @@ public class GameManager extends Thread implements IChangeScene {
         keyboard = new Keyboard();
         frame = new JFrame();
         frame.addKeyListener(keyboard);
-        frame.setBounds(0, 0, 400, 400);
+        frame.setBounds(0, 0, 413, 435);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.setVisible(true);

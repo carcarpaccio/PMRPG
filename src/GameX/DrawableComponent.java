@@ -8,12 +8,14 @@ abstract public class DrawableComponent {
     private int x;
     private int y;
 
+
     protected ArrayList<Image> images;
     protected int currentImageIndex;
 
     public DrawableComponent() {
-        x = 1;
-        y = 1;
+        x = 40;
+        y = 40;
+
         images=new ArrayList<>();
         currentImageIndex=0;
     }

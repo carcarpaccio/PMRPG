@@ -10,10 +10,25 @@ public class DirectionDrawableComponent extends DrawableComponent {
 
     public boolean initialize() {
 
-        loadImage("C:\\Users\\yarn_\\Downloads\\Character-20190917T100633Z-001.zip\\Character");
-        loadImage("C:\\Users\\yarn_\\Downloads\\Character-20190917T100633Z-001.zip\\Character");
-        loadImage("C:\\Users\\yarn_\\Downloads\\Character-20190917T100633Z-001.zip\\Character");
-        loadImage("");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\right0.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\right1.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\right2.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\right3.png");
+
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\left0.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\left1.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\left2.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\left3.png");
+
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\front0.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\front1.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\front2.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\front3.png");
+
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\buck0.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\buck1.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\buck2.png");
+        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\buck3.png");
         return true;
 
     }
@@ -29,6 +44,6 @@ public class DirectionDrawableComponent extends DrawableComponent {
 
     @Override
     void setCurrentImageIndex(int index) {
-        currentImageIndex=index%4;
+        currentImageIndex=index;
     }
 }

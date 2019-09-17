@@ -14,6 +14,8 @@ public class FieldPanelA extends AGamePanel {
     FieldA fieldA;
     FieldManager fieldManager;
 
+    int waittime;
+
     public FieldPanelA(IChangeScene changeScene){
         super(changeScene);
         setVisible(true);
@@ -23,6 +25,8 @@ public class FieldPanelA extends AGamePanel {
 
         fieldA =new FieldA();
         fieldManager=new FieldManager(fieldA,hero);
+
+        waittime=0;
     }
 
     @Override
@@ -34,20 +38,50 @@ public class FieldPanelA extends AGamePanel {
     @Override
     public void update() {
         count.update();
-            if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_UP) > 0 ) {
-                hero.setDirection(EDirection.eUp);
-                hero.setY(hero.getY() - length );
+            if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_UP) > 0) {
+                    hero.setDirection(EDirection.eUp);
+                    if(fieldManager.beforecheck(EDirection.eUp)) hero.setY(hero.getY() - length);
             } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_DOWN) > 0 ) {
                 hero.setDirection(EDirection.eDown);
-                hero.setY(hero.getY() + length );
+                if(fieldManager.beforecheck(EDirection.eDown))   hero.setY(hero.getY() + length );
+
             } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_RIGHT) > 0 ) {
                 hero.setDirection(EDirection.eRight);
-                hero.setX(hero.getX() + length );
+                if(fieldManager.beforecheck(EDirection.eRight))     hero.setX(hero.getX() + length );
+
             } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_LEFT) > 0 ) {
                 hero.setDirection(EDirection.eLeft);
-                hero.setX(hero.getX() - length );
-            }
+                if(fieldManager.beforecheck(EDirection.eLeft))         hero.setX(hero.getX() - length );
 
+            }
+            switch (hero.getDirection()) {
+                case eRight:
+                    if (count.getCount() >= 0) hero.setCurrentImageIndex(0);
+                    if (count.getCount() >= 10) hero.setCurrentImageIndex(1);
+                    if (count.getCount() >= 20) hero.setCurrentImageIndex(2);
+                    if (count.getCount() >= 30) hero.setCurrentImageIndex(3);
+                    break;
+                case eLeft:
+                    if (count.getCount() >= 0) hero.setCurrentImageIndex(4);
+                    if (count.getCount() >= 10) hero.setCurrentImageIndex(5);
+                    if (count.getCount() >= 20) hero.setCurrentImageIndex(6);
+                    if (count.getCount() >= 30) hero.setCurrentImageIndex(7);
+                    break;
+                case eUp:
+                    if (count.getCount() >= 0) hero.setCurrentImageIndex(12);
+                    if (count.getCount() >= 10) hero.setCurrentImageIndex(13);
+                    if (count.getCount() >= 20) hero.setCurrentImageIndex(14);
+                    if (count.getCount() >= 30) hero.setCurrentImageIndex(15);
+                    break;
+                case eDown:
+                    if (count.getCount() >= 0) hero.setCurrentImageIndex(8);
+                    if (count.getCount() >= 10) hero.setCurrentImageIndex(9);
+                    if (count.getCount() >= 20) hero.setCurrentImageIndex(10);
+                    if (count.getCount() >= 30) hero.setCurrentImageIndex(11);
+                    break;
+                case eNone:
+                    break;
+            }
         }
 
     @Override
@@ -67,38 +101,9 @@ public class FieldPanelA extends AGamePanel {
 
 
 
-        switch (hero.getDirection()){
-            case eRight:
-                if(count.getCount()>=0   )hero.setCurrentImageIndex(0);
-                if(count.getCount()>=10  )hero.setCurrentImageIndex(1);
-                if(count.getCount()>=20  )hero.setCurrentImageIndex(2);
-                if(count.getCount()>=30  )hero.setCurrentImageIndex(3);
-                g.drawImage(hero.getImage(),hero.getX(),hero.getY(),hero.getImage().getWidth(this),hero.getImage().getWidth(this),this);
-                break;
-            case eLeft:
-                if(count.getCount()>=0   )hero.setCurrentImageIndex(4);
-                if(count.getCount()>=10  )hero.setCurrentImageIndex(5);
-                if(count.getCount()>=20  )hero.setCurrentImageIndex(6);
-                if(count.getCount()>=30  )hero.setCurrentImageIndex(7);
-                g.drawImage(hero.getImage(),hero.getX(),hero.getY(),hero.getImage().getWidth(this),hero.getImage().getWidth(this),this);
-                break;
-            case eUp:
-                if(count.getCount()>=0   )hero.setCurrentImageIndex(8);
-                if(count.getCount()>=10  )hero.setCurrentImageIndex(9);
-                if(count.getCount()>=20  )hero.setCurrentImageIndex(10);
-                if(count.getCount()>=30  )hero.setCurrentImageIndex(11);
-                g.drawImage(hero.getImage(),hero.getX(),hero.getY(),hero.getImage().getWidth(this),hero.getImage().getWidth(this),this);
-                break;
-            case eDown:
-                if(count.getCount()>=0   )hero.setCurrentImageIndex(12);
-                if(count.getCount()>=10  )hero.setCurrentImageIndex(13);
-                if(count.getCount()>=20  )hero.setCurrentImageIndex(14);
-                if(count.getCount()>=30  )hero.setCurrentImageIndex(15);
-                g.drawImage(hero.getImage(),hero.getX(),hero.getY(),hero.getImage().getWidth(this),hero.getImage().getWidth(this),this);
-                break;
-            case eNone:
-                break;
-        }
+
+        g.drawImage(hero.getImage(),hero.getX(),hero.getY(),hero.getImage().getWidth(this),hero.getImage().getWidth(this),this);
+
         if(count.getCount()>=40)    count.reset();
     }
 }

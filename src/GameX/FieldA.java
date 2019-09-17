@@ -10,10 +10,10 @@ public class FieldA extends AField{
                 else info[i][j] = 1;
             }
         }
-        info[8][8]=10;
+        info[6][7]=10;
     }
 
-    public int[][] getInfo() {
-        return info;
+    public int getInfo(int i,int j) {
+        return info[i][j];
     }
 }
