@@ -77,22 +77,35 @@ public class FieldPanelA extends AGamePanel {
 
 
 
-        if(count.getCount()>=0   )hero.setCurrentImageIndex(0);
-        if(count.getCount()>=10  )hero.setCurrentImageIndex(1);
-        if(count.getCount()>=20  )hero.setCurrentImageIndex(2);
-        if(count.getCount()>=30  )hero.setCurrentImageIndex(3);
+
 
         switch (hero.getDirection()){
             case eRight:
+                if(count.getCount()>=0   )hero.setCurrentImageIndex(0);
+                if(count.getCount()>=10  )hero.setCurrentImageIndex(1);
+                if(count.getCount()>=20  )hero.setCurrentImageIndex(2);
+                if(count.getCount()>=30  )hero.setCurrentImageIndex(3);
                 g.drawImage(hero.getImage(),hero.getX(),hero.getY(),hero.getImage().getWidth(this),hero.getImage().getWidth(this),this);
                 break;
             case eLeft:
+                if(count.getCount()>=0   )hero.setCurrentImageIndex(4);
+                if(count.getCount()>=10  )hero.setCurrentImageIndex(5);
+                if(count.getCount()>=20  )hero.setCurrentImageIndex(6);
+                if(count.getCount()>=30  )hero.setCurrentImageIndex(7);
                 g.drawImage(hero.getImage(),hero.getX(),hero.getY(),hero.getImage().getWidth(this),hero.getImage().getWidth(this),this);
                 break;
             case eUp:
+                if(count.getCount()>=0   )hero.setCurrentImageIndex(8);
+                if(count.getCount()>=10  )hero.setCurrentImageIndex(9);
+                if(count.getCount()>=20  )hero.setCurrentImageIndex(10);
+                if(count.getCount()>=30  )hero.setCurrentImageIndex(11);
                 g.drawImage(hero.getImage(),hero.getX(),hero.getY(),hero.getImage().getWidth(this),hero.getImage().getWidth(this),this);
                 break;
             case eDown:
+                if(count.getCount()>=0   )hero.setCurrentImageIndex(12);
+                if(count.getCount()>=10  )hero.setCurrentImageIndex(13);
+                if(count.getCount()>=20  )hero.setCurrentImageIndex(14);
+                if(count.getCount()>=30  )hero.setCurrentImageIndex(15);
                 g.drawImage(hero.getImage(),hero.getX(),hero.getY(),hero.getImage().getWidth(this),hero.getImage().getWidth(this),this);
                 break;
             case eNone:

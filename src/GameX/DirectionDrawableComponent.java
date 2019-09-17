@@ -10,10 +10,10 @@ public class DirectionDrawableComponent extends DrawableComponent {
 
     public boolean initialize() {
 
-        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\char0.png");
-        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\char1.png");
-        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\char2.png");
-        loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\char3.png");
+        loadImage("C:\\Users\\yarn_\\Downloads\\Character-20190917T100633Z-001.zip\\Character");
+        loadImage("C:\\Users\\yarn_\\Downloads\\Character-20190917T100633Z-001.zip\\Character");
+        loadImage("C:\\Users\\yarn_\\Downloads\\Character-20190917T100633Z-001.zip\\Character");
+        loadImage("");
         return true;
 
     }
