@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ed77ae4-f17a-4e8d-a447-6bf1e7ef2596" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GameX/EKindKeybord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameX/TextBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectMember/GameX/FieldPanelA.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/FieldPanelA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectMember/GameX/Keyboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectMember/GameX/Keyboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameX/FieldPanelA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameX/FieldPanelA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameX/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameX/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameX/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameX/Keyboard.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameX/FieldPanelA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="84" column="77" lean-forward="true" selection-start-line="84" selection-start-column="77" selection-end-line="84" selection-end-column="77" />
+            <state relative-caret-position="277">
+              <caret line="75" column="44" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameX/GameManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-286">
-              <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+            <state relative-caret-position="-68">
+              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -219,11 +213,11 @@
         <option value="$PROJECT_DIR$/src/GameX/DirectionDrawableComponent.java" />
         <option value="$PROJECT_DIR$/src/GameX/Mapchip.java" />
         <option value="$PROJECT_DIR$/src/GameX/MapChip.java" />
-        <option value="$PROJECT_DIR$/src/GameX/GameManager.java" />
         <option value="$PROJECT_DIR$/src/GameX/TextBox.java" />
         <option value="$PROJECT_DIR$/src/GameX/EKindKeybord.java" />
         <option value="$PROJECT_DIR$/src/GameX/Keyboard.java" />
         <option value="$PROJECT_DIR$/src/GameX/FieldPanelA.java" />
+        <option value="$PROJECT_DIR$/src/GameX/GameManager.java" />
       </list>
     </option>
   </component>
@@ -234,7 +228,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="460" />
+    <option name="x" value="587" />
     <option name="y" value="-28" />
     <option name="width" value="1170" />
     <option name="height" value="1040" />
@@ -428,7 +422,7 @@
       <workItem from="1568438542792" duration="1240000" />
       <workItem from="1568466641710" duration="3670000" />
       <workItem from="1568560900765" duration="6674000" />
-      <workItem from="1568809432249" duration="10186000" />
+      <workItem from="1568809432249" duration="11267000" />
     </task>
     <task id="LOCAL-00001" summary="hiunn">
       <created>1568273453722</created>
@@ -479,11 +473,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568814975341</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="壁とtalk">
+      <created>1568820817440</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1568820817440</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169221000" />
+    <option name="totallyTimeSpent" value="170302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -560,7 +561,8 @@
     <MESSAGE value="owarisyori" />
     <MESSAGE value="cooltimeと方向替え追加" />
     <MESSAGE value="outitokasanarusyori" />
-    <option name="LAST_COMMIT_MESSAGE" value="outitokasanarusyori" />
+    <MESSAGE value="壁とtalk" />
+    <option name="LAST_COMMIT_MESSAGE" value="壁とtalk" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Game/Field2.java" />
@@ -820,16 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameX/ChangingPicture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameX/DrawableComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -877,20 +869,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameX/GameManager.java">
+    <entry file="file://$PROJECT_DIR$/src/GameX/FieldPanelA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
-          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        <state relative-caret-position="277">
+          <caret line="75" column="44" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameX/FieldPanelA.java">
+    <entry file="file://$PROJECT_DIR$/src/GameX/ChangingPicture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="84" column="77" lean-forward="true" selection-start-line="84" selection-start-column="77" selection-end-line="84" selection-end-column="77" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameX/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
