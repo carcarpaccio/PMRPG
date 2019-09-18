@@ -7,15 +7,15 @@ import java.awt.event.KeyEvent;
 
 public class Keyboard extends KeyAdapter {
         private int[] key;
-
+        private EKindKeybord KindKeybord;
         public Keyboard(){
             key = new int[256];
+            KindKeybord=EKindKeybord.eField;
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
                 key[e.getKeyCode()]++;
-
         }
 
         @Override
@@ -29,4 +29,11 @@ public class Keyboard extends KeyAdapter {
         }
 
 
+    public EKindKeybord getKindKeybord() {
+        return KindKeybord;
+    }
+
+    public void setKindKeybord(EKindKeybord kindKeybord) {
+        KindKeybord = kindKeybord;
+    }
 }

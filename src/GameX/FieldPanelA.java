@@ -1,4 +1,5 @@
 package GameX;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
@@ -14,10 +15,13 @@ public class FieldPanelA extends AGamePanel {
     FieldA fieldA;
     FieldManager fieldManager;
 
+    TextBox textBox;
+
     int waittime;
 
     public FieldPanelA(IChangeScene changeScene){
         super(changeScene);
+        setLayout(null);//labelが自由に配置される
         setVisible(true);
         System.out.println("Field画面");
         length=40;
@@ -30,6 +34,10 @@ public class FieldPanelA extends AGamePanel {
         house.setCurrentImageIndex(0);
 
         waittime=0;
+
+       textBox=new TextBox();
+        this.add(textBox);
+        textBox.setVisible(false);
     }
 
     @Override
@@ -41,38 +49,40 @@ public class FieldPanelA extends AGamePanel {
     @Override
     public void update() {
         count.update();
-        if(cooltime.getCount()==0) {
-            if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_UP) > 0) {
-                if (fieldManager.beforecheck(EDirection.eUp) && hero.getDirection() == EDirection.eUp)
-                    hero.setY(hero.getY() - length);
-                hero.setDirection(EDirection.eUp);
-                cooltime.setCount(6);
-            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_DOWN) > 0) {
-                if (fieldManager.beforecheck(EDirection.eDown) && hero.getDirection() == EDirection.eDown)
-                    hero.setY(hero.getY() + length);
-                hero.setDirection(EDirection.eDown);
-                cooltime.setCount(6);
-            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_RIGHT) > 0) {
-                if (fieldManager.beforecheck(EDirection.eRight) && hero.getDirection() == EDirection.eRight)
-                    hero.setX(hero.getX() + length);
-                hero.setDirection(EDirection.eRight);
-                cooltime.setCount(6);
-            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_LEFT) > 0) {
-                if (fieldManager.beforecheck(EDirection.eLeft) && hero.getDirection() == EDirection.eLeft)
-                    hero.setX(hero.getX() - length);
-                hero.setDirection(EDirection.eLeft);
-                cooltime.setCount(6);
-            }else if(GameManager.keyboard.getPressedFrame(KeyEvent.VK_ENTER) > 0){
+        if (cooltime.getCount() == 0) {
+                    textBox.setVisible(false);
+                    if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_UP) > 0) {
+                        if (fieldManager.beforecheck(EDirection.eUp) && hero.getDirection() == EDirection.eUp)
+                            hero.setY(hero.getY() - length);
+                        hero.setDirection(EDirection.eUp);
+                        cooltime.setCount(6);
+                    } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_DOWN) > 0) {
+                        if (fieldManager.beforecheck(EDirection.eDown) && hero.getDirection() == EDirection.eDown)
+                            hero.setY(hero.getY() + length);
+                        hero.setDirection(EDirection.eDown);
+                        cooltime.setCount(6);
+                    } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_RIGHT) > 0) {
+                        if (fieldManager.beforecheck(EDirection.eRight) && hero.getDirection() == EDirection.eRight)
+                            hero.setX(hero.getX() + length);
+                        hero.setDirection(EDirection.eRight);
+                        cooltime.setCount(6);
+                    } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_LEFT) > 0) {
+                        if (fieldManager.beforecheck(EDirection.eLeft) && hero.getDirection() == EDirection.eLeft)
+                            hero.setX(hero.getX() - length);
+                        hero.setDirection(EDirection.eLeft);
+                        cooltime.setCount(6);
+                    } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_ENTER) > 0 && !fieldManager.beforecheck(hero.getDirection())) {
+                        textBox.setVisible(true);
+                        cooltime.setCount(30);
+                    }
+        }
 
+            if (house.overlapTo(hero)) {
+                scene.changeScene(EGameScene.eField);
             }
-        }
-        if(house.overlapTo(hero)){
-            scene.changeScene(EGameScene.eField);
-        }
 
 
-
-        if(cooltime.getCount()>0)   cooltime.countdown();
+            if (cooltime.getCount() > 0) cooltime.countdown();
             switch (hero.getDirection()) {
                 case eRight:
                     if (count.getCount() >= 0) hero.setCurrentImageIndex(0);
