@@ -9,7 +9,7 @@ public class FieldPanelA extends AGamePanel {
 
     int length;
     Counter count;
-    Counter keycount;
+    Counter cooltime;
 
     FieldA fieldA;
     FieldManager fieldManager;
@@ -22,6 +22,7 @@ public class FieldPanelA extends AGamePanel {
         System.out.println("Field画面");
         length=40;
         count=new Counter();    //足踏み処理の買うんと
+        cooltime=new Counter();
 
         fieldA =new FieldA();
         fieldManager=new FieldManager(fieldA,hero);
@@ -38,22 +39,30 @@ public class FieldPanelA extends AGamePanel {
     @Override
     public void update() {
         count.update();
+        if(cooltime.getCount()==0) {
             if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_UP) > 0) {
-                    hero.setDirection(EDirection.eUp);
-                    if(fieldManager.beforecheck(EDirection.eUp)) hero.setY(hero.getY() - length);
-            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_DOWN) > 0 ) {
+                if (fieldManager.beforecheck(EDirection.eUp) && hero.getDirection() == EDirection.eUp)
+                    hero.setY(hero.getY() - length);
+                hero.setDirection(EDirection.eUp);
+                cooltime.setCount(4);
+            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_DOWN) > 0) {
+                if (fieldManager.beforecheck(EDirection.eDown) && hero.getDirection() == EDirection.eDown)
+                    hero.setY(hero.getY() + length);
                 hero.setDirection(EDirection.eDown);
-                if(fieldManager.beforecheck(EDirection.eDown))   hero.setY(hero.getY() + length );
-
-            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_RIGHT) > 0 ) {
+                cooltime.setCount(4);
+            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_RIGHT) > 0) {
+                if (fieldManager.beforecheck(EDirection.eRight) && hero.getDirection() == EDirection.eRight)
+                    hero.setX(hero.getX() + length);
                 hero.setDirection(EDirection.eRight);
-                if(fieldManager.beforecheck(EDirection.eRight))     hero.setX(hero.getX() + length );
-
-            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_LEFT) > 0 ) {
+                cooltime.setCount(4);
+            } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_LEFT) > 0) {
+                if (fieldManager.beforecheck(EDirection.eLeft) && hero.getDirection() == EDirection.eLeft)
+                    hero.setX(hero.getX() - length);
                 hero.setDirection(EDirection.eLeft);
-                if(fieldManager.beforecheck(EDirection.eLeft))         hero.setX(hero.getX() - length );
-
+                cooltime.setCount(4);
             }
+        }
+        if(cooltime.getCount()>0)   cooltime.countdown();
             switch (hero.getDirection()) {
                 case eRight:
                     if (count.getCount() >= 0) hero.setCurrentImageIndex(0);
