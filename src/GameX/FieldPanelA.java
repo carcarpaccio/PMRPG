@@ -6,7 +6,7 @@ public class FieldPanelA extends AGamePanel {
 
 
     DirectionDrawableComponent hero=new DirectionDrawableComponent();
-
+    MapChip house=new MapChip();
     int length;
     Counter count;
     Counter cooltime;
@@ -27,6 +27,8 @@ public class FieldPanelA extends AGamePanel {
         fieldA =new FieldA();
         fieldManager=new FieldManager(fieldA,hero);
 
+        house.setCurrentImageIndex(0);
+
         waittime=0;
     }
 
@@ -44,24 +46,32 @@ public class FieldPanelA extends AGamePanel {
                 if (fieldManager.beforecheck(EDirection.eUp) && hero.getDirection() == EDirection.eUp)
                     hero.setY(hero.getY() - length);
                 hero.setDirection(EDirection.eUp);
-                cooltime.setCount(4);
+                cooltime.setCount(6);
             } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_DOWN) > 0) {
                 if (fieldManager.beforecheck(EDirection.eDown) && hero.getDirection() == EDirection.eDown)
                     hero.setY(hero.getY() + length);
                 hero.setDirection(EDirection.eDown);
-                cooltime.setCount(4);
+                cooltime.setCount(6);
             } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_RIGHT) > 0) {
                 if (fieldManager.beforecheck(EDirection.eRight) && hero.getDirection() == EDirection.eRight)
                     hero.setX(hero.getX() + length);
                 hero.setDirection(EDirection.eRight);
-                cooltime.setCount(4);
+                cooltime.setCount(6);
             } else if (GameManager.keyboard.getPressedFrame(KeyEvent.VK_LEFT) > 0) {
                 if (fieldManager.beforecheck(EDirection.eLeft) && hero.getDirection() == EDirection.eLeft)
                     hero.setX(hero.getX() - length);
                 hero.setDirection(EDirection.eLeft);
-                cooltime.setCount(4);
+                cooltime.setCount(6);
+            }else if(GameManager.keyboard.getPressedFrame(KeyEvent.VK_ENTER) > 0){
+
             }
         }
+        if(house.overlapTo(hero)){
+            scene.changeScene(EGameScene.eField);
+        }
+
+
+
         if(cooltime.getCount()>0)   cooltime.countdown();
             switch (hero.getDirection()) {
                 case eRight:
@@ -103,9 +113,8 @@ public class FieldPanelA extends AGamePanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.clearRect(0, 0, getWidth(), getHeight());
-        //g.drawImage(hero.getImage(),(int)hero.getX(),(int) hero.getY(),40,40,this);
         g.drawImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\Game\\街.PNG"),  0,0,400,400,this);
-
+        g.drawImage(house.getImage(),house.getX(),house.getY(),house.getWidth(),house.getHeight(),this);
 
 
 

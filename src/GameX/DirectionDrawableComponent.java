@@ -29,6 +29,7 @@ public class DirectionDrawableComponent extends DrawableComponent {
         loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\buck1.png");
         loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\buck2.png");
         loadImage("C:\\Users\\yarn_\\IdeaProjects\\ProjectMember\\src\\GameX\\Charactar\\buck3.png");
+
         return true;
 
     }

@@ -31,7 +31,6 @@ abstract public class DrawableComponent {
         if (this.x == drawableComponent.x && this.y == drawableComponent.y){
             return true;
         }
-
         return false;
     }
 
